@@ -31,7 +31,7 @@ To run linear head model training on CIFAR-10:
 You can change the arguments as you wish. 
 
 ## Run Test
-To run evaluation:
+To run evaluation on CIFAR-10:
 
 ```python cifar_finetune.py --head_type attention --batch_size 32 --blocknum 1 --t 10 --lr 1e-2 --epochs 20 --num_heads 8 --mlp_ratio 4 --num_blocks 2 --pre_pool_size 16 --norm_type layer --only_eval True --attack apgd --attack_iters_test 10 --attack_norm l_inf --resume_checkpoint <model dictionary file directory>```
     
