@@ -1,6 +1,6 @@
 ## Diffusion Models are Robust Pretrainers
 
-Official implementation of the Signal Processing Letters 2026 paper: "Diffusion Models as Robust Pretrainers for Classification and Detection".
+Official implementation of the Signal Processing Letters paper: "Diffusion Models as Robust Pretrainers for Classification and Detection".
 
 We study models built on top of off-the-shelf diffusion models and demonstrate their practical significance: 
 they provide a low-cost path to robust representations, allowing lightweight heads to be trained on frozen features without full adversarial training. 
