@@ -21,33 +21,19 @@ Here is a list of libraries you need to install to execute the code:
 
 ## Run Training
 To run attention head model training on CIFAR-10:
+
 python cifar_finetune.py --head_type attention --batch_size 32 --blocknum 1 --t 10 --output_dir <dir> --lr 1e-2 --epochs 100 --num_heads 8 --mlp_ratio 4 --num_blocks 2 --pre_pool_size 16 --norm_type layer
 
 To run linear head model training on CIFAR-10:
+
 python cifar_finetune.py --head_type linear --batch_size 32 --blocknum 1 --t 10 --output_dir <dir> --lr 1e-2 --epochs 20 --pool_size1 1 --pool_size2 1
 
 You can change the arguments as you wish. 
 
 ## Run Test
 To run evaluation:
-python cifar_finetune.py \
-    --head_type attention \
-    --batch_size 32 \
-    --blocknum 1 \
-    --t 10 \
-    --output_dir <some direrctory> \
-    --lr 1e-2 \
-    --epochs 20 \
-    --num_heads 8 \
-    --mlp_ratio 4 \
-    --num_blocks 2 \
-    --pre_pool_size 16 \
-    --norm_type layer \
-    --only_eval True \
-    --attack apgd \
-    --attack_iters_test 10 \
-    --attack_norm l_inf \
-    --resume_checkpoint <model dictionary file directory>
+
+python cifar_finetune.py --head_type attention --batch_size 32 --blocknum 1 --t 10 --lr 1e-2 --epochs 20 --num_heads 8 --mlp_ratio 4 --num_blocks 2 --pre_pool_size 16 --norm_type layer --only_eval True --attack apgd --attack_iters_test 10 --attack_norm l_inf --resume_checkpoint <model dictionary file directory>
     
 Here for instance we test the model under the apgd attack with L infinity norm. 
-Make sure to add the flag --only_eval True . 
+Make sure to add the flag "--only_eval True" and "--resume_checkpoint" with the directory of the dictionary of the model you want to evaluate.  
